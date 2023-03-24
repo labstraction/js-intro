@@ -39,14 +39,55 @@ for (let i = 0; i < arrayOfStrings.length; i++) {
 
 //1) scrivere una funzione che prende come parametro un array di numeri e fa console.log dei numeri con la logica fizzbuzz
 
+const pippo = [3, 15, 10, 8 ,4]
+
+function printArrayInFizzBuzzLogic(arrayOfNumber){
+
+}
+
+printArrayInFizzBuzzLogic(pippo)
+//Fizz
+//FizzBuzz
+//Buzz
+//8
+//4
 
 //2) scrivere una funzione che prende come parametro un array di stringhe e logga quelle più piccole di 5 caratteri
 
+const pluto = ['casa', 'armadio', 'gatto', 'perfetto', 'mano']
+
+function printShorterThan5Chars(arrayOfStrings){
+
+}
+
+printArrayInFizzBuzzLogic(pluto)
+//casa
+//mano
+
 
 //3) scrivere una funzione che prende come parametro una stringa e restituisce una stringa composta dai primi 5 caratteri convertiti in maiuscolo
+function pickFirst5CharsAndMakeUpperCase(text) {
+    
+}
+
+console.log(pickFirst5CharsAndMakeUpperCase('deltaplano')) //DELTA
+
+
 
 //4) scrivere una funzione che prende come parametro una stringa e restituisce la lunghezza della stringa senza spazi
 
+function lengthOfTextWithoutSpaces(text) {
+    
+}
+
+console.log(lengthOfTextWithoutSpaces('il nano enorme')) //12
+
 //5) scrivere una funzione che prende come parametro una stringa e restituisce il numero degli spazi
+
+function countSpaces(text) {
+    
+}
+
+console.log(countSpaces('il nano enorme')) //2
 
 
