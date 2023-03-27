@@ -28,24 +28,292 @@
 
 
 
-const arrayOfStrings = ['andrea', 'jing', 'valentina', 'vlad'];
+// const arrayOfStrings = ['andrea', 'davide', 'jing', 'valentina', 'vlad'];
 
-for (let i = 0; i < arrayOfStrings.length; i++) {
-    const element = arrayOfStrings[i];
-    console.log(element);
-}
+// for (let i = 0; i < arrayOfStrings.length; i++) {
+//     const element = arrayOfStrings[i];
+//     console.log(element);
+// }
 
+
+// const indexOfJing = arrayOfStrings.indexOf('jing');
+// console.log(indexOfJing);
+// const indexOfSimone = arrayOfStrings.indexOf('simone');
+// console.log(indexOfSimone);
+// arrayOfStrings[0] = 'pietro';
+// console.log(arrayOfStrings);
+
+
+//---------------------------------------------------------------------------------------
+//OGGETTI
+
+// const andrea = {
+//     name: 'Andrea',
+//     surname: 'Asioli',
+//     yob: 1978,
+//     isMarried: false,
+//     pupils: ['davide', 'jing', 'valentina', 'vlad'],
+//     dog: {
+//         name: 'ariel',
+//         breed: 'border-collie'
+//     },
+//     "cool car": "bmw"
+// }
+
+// console.log(andrea);
+
+// console.log(andrea.surname);
+
+// console.log(andrea['yob']);
+
+// console.log(andrea['cool car']);
+
+
+// const andrea = {
+//     name: 'Andrea',
+//     surname: 'Asioli',
+//     yob: 1978,
+//     nickname: 'labstraction',
+//     email: 'ilmionuovoaccount@gmail.com'
+// }
+
+// const simone = {
+//     name: 'Simone',
+//     surname: 'Maccarone',
+//     yob: 2003,
+//     nickname: 'coderMonkey',
+//     email: 'superpippo@gmail.com'
+// }
+
+// const myClass = [andrea, simone];
+
+
+// for (let i = 0; i < myClass.length; i++) {
+//     const person = myClass[i];
+// //     const description = 
+// //     `NOME: ${person.name} ${person.surname} (${person.nickname})
+// // ETA': ${2023 - person.yob}
+// // Email: ${person.email}`
+//     // console.log(description);
+//     console.log('NOME: ' + person.name + ' ' + person.surname + ' (' + person.nickname + ')\n'
+//                +'ETA\': ' + (2023 -person.yob) + '\n'
+//                +'EMAIL: ' + person.email)
+// }
+
+
+// NOME: Andrea Asioli (labstraction),
+// ETA: 45 anni,
+// EMAIL: ilmionuovoaccount@gmail.com
+
+
+//-------------------------------------------------------------------------
+// DA ARRAY A OGGETTI E VICEVERSA
+
+// const arielloArray = ['ariel', 'border-collie', 'maschio', 'bianco e nero'];
+
+// console.log(arielloArray);
+
+// const arielloObj = {
+//     name: arielloArray[0],
+//     breed: arielloArray[1],
+//     gender: arielloArray[2],
+//     color: arielloArray[3]
+// }
+
+// console.log(arielloObj);
+
+// const newArielloArray = Object.values(arielloObj);
+
+// console.log(newArielloArray);
+
+// const newKeysArray = Object.keys(arielloObj);
+
+// console.log(newKeysArray);
+
+
+//-------------------------------------------------------------------------
+// VALUE TYPES AND REFERECE TYPES
+
+// let pippo = 5;
+// let pluto = pippo;
+// pippo = 7;
+
+// console.log(pippo);
+// console.log(pluto);
+
+
+// let topolino = {yob: 1930, name: 'micky mouse'};
+// let newTopolino = topolino;
+// topolino.yob = 1950;
+
+// console.log(topolino.yob);
+// console.log(newTopolino.yob);
+
+
+// function sum2(selectedNumber){
+//     selectedNumber = selectedNumber + 2
+//     return selectedNumber;
+// }
+
+// let paperino = 5;
+
+// let basettoni = sum2(paperino);
+
+
+// console.log(paperino);
+// console.log(basettoni)
+
+
+// function make2YearsOlder(person) {
+//     person.yob = person.yob + 2;
+//     return person;
+// }
+
+// let andrea = {name: 'Andrea', yob: 1978}
+
+// let olderAndrea = make2YearsOlder(andrea);
+
+
+// console.log(andrea);
+// console.log(olderAndrea);
+
+
+// function make2YearsOlderWithClone(person){
+//     // let clone = {name: person.name, yob: person.yob};
+//     let clone = {...person};
+//     clone.yob = clone.yob + 2;
+//     return clone;
+// }
+
+// let simone = {name: 'simone', yob: 2003};
+
+// let olderSimone = make2YearsOlderWithClone(simone);
+
+// console.log(simone);
+// console.log(olderSimone);
+
+
+//-------------------------------------------------------------------------
+//DESTRUTTURARE
+
+// const libro = {
+//     titolo: 'la divina commedia',
+//     autore: 'dante alighieri',
+//     anno: 2019,
+//     paese: 'italia',
+//     casaEditrice: 'einaudi'
+// }
+
+// // const titolo = libro.titolo;
+// // const autore = libro.autore;
+
+// const {titolo, autore} = libro;
+
+// console.log(titolo, 'di ' + autore);
+
+
+//-------------------------------------------------------------------------
+//JSON
+
+
+// const libro = {
+//     titolo: 'la divina commedia',
+//     autore: 'dante alighieri',
+//     anno: 2019,
+//     paese: 'italia',
+//     casaEditrice: 'einaudi'
+// }
+
+// const libroInStringa = JSON.stringify(libro);
+
+// console.log(libro);
+// console.log(libroInStringa);
+
+
+// const libroInStringa2 = '{"titolo":"iliade","autore":"omero","anno":2010,"paese":"italia","casaEditrice":"giunti"}';
+// const libro2 = JSON.parse(libroInStringa2);
+
+// console.log(libroInStringa2);
+// console.log(libro2);
+
+//-------------------------------------------------------------------------
+//FILTER
+//1) scrivere una funzione che dato un array di numeri restituisce un array con i numeri maggiori o uguali 0
+
+// const numbers = [100, -23, 0, -234, 1001, 1, 34, -12];
+
+// function filterNegative(array){
+//     const tempArray = [];
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i];
+//         if (element >= 0){
+//             tempArray.push(element);
+//         }
+//     } 
+//     return tempArray;
+// }
+
+// console.log(filterNegative(numbers)) // [100, 0, 1001, 1, 34]
+
+
+//MAP
+//2) SCRIVERE UNA FUNZIONE CHE DATO UN ARRAY DI NUMERI LI MOLTIPLICA TUTTI PER DUE
+
+// const numbers = [100, -23, 0, -234, 1001, 1, 34, -12];
+
+// function multiplyAllElementsBy2(array) {
+//     const tempArray = [];
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i];
+//         const risultato = element*2;
+//         tempArray.push(risultato);
+//     }
+//     return tempArray;
+// }
+
+// console.log(multiplyAllElementsBy2(numbers)) //[200, -46, 0, -468, 2002, 2, 68, -24]
+
+//REDUCE
+//3) creare una funzione che somma tutti gli elementi di un array di numeri
+
+// const numbers = [100, -23, 0, -234, 1001, 1, 34, -12];
+
+// function sumAllElements(array){
+//     let tempNumber = 0;
+//     for (let i = 0; i < array.length; i++) {
+//         const element = array[i];
+//         tempNumber = tempNumber+element;
+//     }
+//     return tempNumber;
+// }
+
+// console.log(sumAllElements(numbers)) //867
+
+
+//-------------------------------------------------------------------------
+//ESERCIZI
 
 
 //1) scrivere una funzione che prende come parametro un array di numeri e fa console.log dei numeri con la logica fizzbuzz
 
-const pippo = [3, 15, 10, 8 ,4]
+// const pippo = [3, 15, 10, 8 ,4]
 
-function printArrayInFizzBuzzLogic(arrayOfNumber){
+// function printArrayInFizzBuzzLogic(arrayOfNumber){
+//     for (let i = 0; i < arrayOfNumber.length; i++) {
+//         const element = arrayOfNumber[i];
+//         if (element % 3 === 0 && element % 5 === 0) {
+//             console.log('FizzBuzz');
+//         } else if (element % 3 === 0){
+//             console.log('Fizz');
+//         } else if (element % 5 === 0) {
+//             console.log('Buzz');
+//         } else {
+//             console.log(element);
+//         }
+//     }
+// }
 
-}
-
-printArrayInFizzBuzzLogic(pippo)
+// printArrayInFizzBuzzLogic(pippo)
 //Fizz
 //FizzBuzz
 //Buzz
@@ -54,40 +322,137 @@ printArrayInFizzBuzzLogic(pippo)
 
 //2) scrivere una funzione che prende come parametro un array di stringhe e logga quelle più piccole di 5 caratteri
 
-const pluto = ['casa', 'armadio', 'gatto', 'perfetto', 'mano']
+// const pluto = ['casa', 'armadio', 'gatto', 'perfetto', 'mano']
 
-function printShorterThan5Chars(arrayOfStrings){
+// const paperino = ['qui', 'quo', 'qua', 'paperina'];
+//                  //012(3)
+// function printShorterThan5Chars(arrayOfStrings){
+//     for (let i = 0; i < arrayOfStrings.length; i++) {
+//         const element = arrayOfStrings[i];
+//         if (element.length < 5) {
+//             console.log(`la stringa è ${element}`);
+//         }
+//     }
+// }
 
-}
-
-printArrayInFizzBuzzLogic(pluto)
+// printShorterThan5Chars(pluto);
+// printShorterThan5Chars(paperino);
 //casa
 //mano
 
 
 //3) scrivere una funzione che prende come parametro una stringa e restituisce una stringa composta dai primi 5 caratteri convertiti in maiuscolo
-function pickFirst5CharsAndMakeUpperCase(text) {
-    
-}
+// function pickFirst5CharsAndMakeUpperCase(text) {
+//     let resultText = '';
+//     for (let i = 0; i < text.length; i++) {
+//         if (i < 5) {
+//             const char = text[i];
+//             resultText += char;
+//         }    
+//     }
+//     return resultText.toUpperCase();
+// }
 
-console.log(pickFirst5CharsAndMakeUpperCase('deltaplano')) //DELTA
-
+// console.log(pickFirst5CharsAndMakeUpperCase('deltaplano')) //DELTA
+//                                              01234
 
 
 //4) scrivere una funzione che prende come parametro una stringa e restituisce la lunghezza della stringa senza spazi
 
-function lengthOfTextWithoutSpaces(text) {
-    
-}
+// function lengthOfTextWithoutSpaces(text) {
+//     //const textWithoutSpaces = text.replaceAll(' ', '');
+//     const textWithoutSpaces = text.replace(/\s/g, '');
+//     return textWithoutSpaces.length;
+// }
 
-console.log(lengthOfTextWithoutSpaces('il nano enorme')) //12
+// console.log(lengthOfTextWithoutSpaces('il nano enorme')) //12
 
 //5) scrivere una funzione che prende come parametro una stringa e restituisce il numero degli spazi
 
-function countSpaces(text) {
-    
+// function countSpaces(text) {
+//     let numberOfSpaces = 0;
+//     for (let i = 0; i < text.length; i++) {
+//         const char = text[i];
+//         if (char === ' ') {
+//             numberOfSpaces++;
+//         }
+//     }
+//     return numberOfSpaces;
+// }
+
+// console.log(countSpaces('il nano enorme')) //2
+
+
+///--------------------------------------------------------------------------------------------------
+//ESERCIZI 27/03
+
+//1) scrivere una funzione che prende in input un array di numeri è restituisce un array di stringhe in logica FizzBuzz (map)
+
+const numbers = [3, 5, 15, 8, 12, 2];
+
+function convertArrayInFizzBuzz(array){
+
 }
 
-console.log(countSpaces('il nano enorme')) //2
+console.log(convertArrayInFizzBuzz(numbers)) //['Fizz', 'Buzz', 'FizzBuzz', '8', 'Fizz', '2']
+
+//2) scrivere una funzione che prende in input un array di numeri è restituisce un array di numeri in cui i positivi sono trasformati in negativi e viceversa (map)
+
+const numbers1 = [-3, 5, 15, -8, 12, 2, 0];
+
+function invertElements(array){
+
+}
+
+console.log(invertElements(numbers1)) //[3, -5, -15, 8, -12, -2, 0]
+
+//3) scrivere una funzione che prende in input un array di stringhe è restituisce un array di numeri con la lunghezza delle stringhe (map)
+
+const strings = ['pippo', 'pluto', 'qui'];
+
+function lengthOfElements(array){
+
+}
+
+console.log(lengthOfElements(strings)) //[4, 5, 3]
 
 
+//4) scrivere una funzione che prende in input un array di stringhe è restituisce solo quelle che contengono la lettera z (filter)
+
+const strings2 = ['pippo', 'pluto', 'qui', 'zapotec'];
+
+function onlyElementsWithZ(array){
+
+}
+
+console.log(onlyElementsWithZ(strings2)) //['zapotec']
+
+//5) scrivere una funzione che prende in input un array di numeri e restituisce tutti i numeri pari (filter)
+
+const numbers2 = [-3, 5, 15, -8, 12, 2, 0];
+
+function onlyEven(array){
+
+}
+
+console.log(onlyEven(numbers2)) //[8, -12, -2, 0]
+
+//6) scrivere una funzione che prende in input un array di stringhe restituisce una stringa composta dalle iniziali
+//(reduce)
+const strings3 = ['pippo', 'osvaldo', 'paperino'];
+
+function sumFirstChar(array){
+
+}
+
+console.log(sumFirstChar(strings3)) //'pop'
+
+//7) scrivere una funzione che prende in input un array di numeri e restituisce il maggiore
+
+const numbers3 = [-3, 5, 15, -8, 12, 2, 0];
+
+function maxElement(array){
+
+}
+
+console.log(maxElement(numbers3)) //15
