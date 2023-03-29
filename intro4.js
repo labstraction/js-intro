@@ -465,7 +465,26 @@ for (const key in andrea) {
 //     return tempArray;
 // }
 
+function convertArrayInFizzBuzz2(array){
+    const newArray = array.map((numb) => {
+        let risultato = '';
+        if (numb % 3 === 0 && numb % 5 === 0) {
+            risultato = 'FizzBuzz';
+        } else if (numb % 3 === 0) {
+            risultato = 'Fizz';
+        } else if (numb % 5 === 0) {
+            risultato = 'Buzz';
+        } else {
+            risultato += element;
+        }
+        return risultato;
+    });
+    return newArray;
+}
+
 // console.log(convertArrayInFizzBuzz(numbers)) //['Fizz', 'Buzz', 'FizzBuzz', '8', 'Fizz', '2']
+
+
 
 //2) scrivere una funzione che prende in input un array di numeri è restituisce un array di numeri in cui i positivi sono trasformati in negativi e viceversa (map)
 
