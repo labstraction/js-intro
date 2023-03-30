@@ -291,60 +291,60 @@
 //-------------------------------------------------------------------------
 ///TUTTI I CICLI IN JAVASCRIPT
 
-const numbers = [9, 8, 7, 1, 2, 3];
+// const numbers = [9, 8, 7, 1, 2, 3];
 
-//WHILE
-let i = 0
-while (i < numbers.length) {
-    const element = numbers[i];
-    console.log(element);
-    i++;
-}
-//FOR
-for (let i = 0; i < numbers.length; i++) {
-    const element = numbers[i];
-    console.log(element);
-}
-//DOWHILE
-let j = 0
-do {
-    const element = numbers[j];
-    console.log(element);
-    j++;
-} while (j<numbers.length);
-//FOROF
-for (const element of numbers) {
-    console.log(element);
-}
-//FOREACH
-numbers.forEach((element) => console.log(element));
-//MAP
-numbers.map((element) => element * 2)
-//FILTER
-numbers.filter((element) => element % 2 === 0)
-//REDUCE
-numbers.reduce((previosElement, currentElement) => previosElement + currentElement, 0);
+// //WHILE
+// let i = 0
+// while (i < numbers.length) {
+//     const element = numbers[i];
+//     console.log(element);
+//     i++;
+// }
+// //FOR
+// for (let i = 0; i < numbers.length; i++) {
+//     const element = numbers[i];
+//     console.log(element);
+// }
+// //DOWHILE
+// let j = 0
+// do {
+//     const element = numbers[j];
+//     console.log(element);
+//     j++;
+// } while (j<numbers.length);
+// //FOROF
+// for (const element of numbers) {
+//     console.log(element);
+// }
+// //FOREACH
+// numbers.forEach((element) => console.log(element));
+// //MAP
+// numbers.map((element) => element * 2)
+// //FILTER
+// numbers.filter((element) => element % 2 === 0)
+// //REDUCE
+// numbers.reduce((previosElement, currentElement) => previosElement + currentElement, 0);
 
 
-const strings = ['qui', 'quo', 'qua'];
+// const strings = ['qui', 'quo', 'qua'];
 
-strings.reduce((previosElement, currentElement) => previosElement + currentElement, '');
+// strings.reduce((previosElement, currentElement) => previosElement + currentElement, '');
 
-//FORIN - per ciclare gli oggetti
+// //FORIN - per ciclare gli oggetti
 
-const andrea = {
-    name: 'andrea',
-    surname: 'asioli',
-    hasADog: true,
-    yob: 1978
-}
+// const andrea = {
+//     name: 'andrea',
+//     surname: 'asioli',
+//     hasADog: true,
+//     yob: 1978
+// }
 
-for (const key in andrea) {
-    if (Object.hasOwnProperty.call(andrea, key)) {
-        const value = andrea[key];
-        console.log(`andrea ha la proprieta ${key} associata al valore ${value}`)
-    }
-}
+// for (const key in andrea) {
+//     if (Object.hasOwnProperty.call(andrea, key)) {
+//         const value = andrea[key];
+//         console.log(`andrea ha la proprieta ${key} associata al valore ${value}`)
+//     }
+// }
 
 //-------------------------------------------------------------------------
 //ESERCIZI
@@ -465,22 +465,22 @@ for (const key in andrea) {
 //     return tempArray;
 // }
 
-function convertArrayInFizzBuzz2(array){
-    const newArray = array.map((numb) => {
-        let risultato = '';
-        if (numb % 3 === 0 && numb % 5 === 0) {
-            risultato = 'FizzBuzz';
-        } else if (numb % 3 === 0) {
-            risultato = 'Fizz';
-        } else if (numb % 5 === 0) {
-            risultato = 'Buzz';
-        } else {
-            risultato += element;
-        }
-        return risultato;
-    });
-    return newArray;
-}
+// function convertArrayInFizzBuzz2(array){
+//     const newArray = array.map((numb) => {
+//         let risultato = '';
+//         if (numb % 3 === 0 && numb % 5 === 0) {
+//             risultato = 'FizzBuzz';
+//         } else if (numb % 3 === 0) {
+//             risultato = 'Fizz';
+//         } else if (numb % 5 === 0) {
+//             risultato = 'Buzz';
+//         } else {
+//             risultato += element;
+//         }
+//         return risultato;
+//     });
+//     return newArray;
+// }
 
 // console.log(convertArrayInFizzBuzz(numbers)) //['Fizz', 'Buzz', 'FizzBuzz', '8', 'Fizz', '2']
 
@@ -560,7 +560,7 @@ function convertArrayInFizzBuzz2(array){
 
 //6) scrivere una funzione che prende in input un array di stringhe restituisce una stringa composta dalle iniziali
 //(reduce)
-// const strings3 = ['pippo', 'osvaldo', 'paperino'];
+const strings3 = ['pippo', 'osvaldo', 'paperino'];
 
 // function sumFirstChar(array){
 //     let tempString = "";
@@ -572,11 +572,32 @@ function convertArrayInFizzBuzz2(array){
 //     return tempString;
 // }
 
+
+   function sumFirstChar1(array) {
+    const newArray = array.reduce((previous, current) => {
+        const firstChar = current[0];
+        previous += firstChar;
+        return previous;
+    }, "");
+    return newArray;
+   }
+
+   function sumFirstChar2(array) {
+        return array.reduce((previous,current) => previous + current[0], '');
+   }
+
+
+//    function sumArray(array){
+//         return array.reduce((previous, current) => previous + current, 0)
+//    }
+
+   console.log(sumFirstChar2(strings3));
+//    console.log(sumArray([3, 4, 7]));
 // console.log(sumFirstChar(strings3)) //'pop'
 
 //7) scrivere una funzione che prende in input un array di numeri e restituisce il maggiore
 
-// const numbers3 = [-3, 5, 15, -8, 12, 2, 0];
+//const numbers3 = [-3, 5, 15, -8, 12, 2, 0];
 // const numbers4 = [-1, -4, -3]
 
 // function maxElement(array){
@@ -611,6 +632,24 @@ function convertArrayInFizzBuzz2(array){
 //         }
 //     return tempNumber;
 // }
+
+const numbers3 = [-3, 5, 15, -8, 12, 2, 0];
+function maxElement4(array){
+    return array.reduce((previous, current) => {
+        if(previous < current){
+            return current;
+        } else {
+            return previous;
+        }
+    }, -Infinity);
+}
+
+
+//find
+
+//some
+
+
 
 
 // console.log(maxElement(numbers3)) //15
